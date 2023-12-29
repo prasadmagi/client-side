@@ -24,7 +24,7 @@ const Users = () => {
 
                     id="outlined-password-input"
                     label="Search user here"
-                    type="password"
+                    type="text"
                     autoComplete="current-password"
                     value={text}
                     onChange={(e) => settext(e.target.value)}
