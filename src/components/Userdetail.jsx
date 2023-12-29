@@ -8,15 +8,16 @@ import { toast, ToastContainer } from 'react-toastify'
 const Userdetail = () => {
     const [input, setinput] = useState({});
     const id = useParams().id;
+    let url = window.REACT_APP_URL
     useEffect(() => {
         const fetchHandle = async () => {
-            await axios.get(`http://localhost:4000/users/${id}`)
+            await axios.get(url + `${id}`)
                 .then((res) => res.data).then(data => setinput(data.users))
         };
         fetchHandle()
     }, [id]);
     const sendrequest = async () => {
-        await axios.put(`http://localhost:4000/users/${id}`, {
+        await axios.put(url + `${id}`, {
             name: String(input.name),
             dob: String(input.dob),
             image: String(input.image),

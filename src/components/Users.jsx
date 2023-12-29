@@ -4,7 +4,7 @@ import User from "./User"
 import '../App.css'
 import { Grid, TextField } from '@mui/material';
 import { Box } from '@mui/system';
-const URL = "http://localhost:4000/users";
+const URL = window.REACT_APP_URL;
 
 const fetchusers = async () => {
     return await axios.get(URL).then(res => res.data);

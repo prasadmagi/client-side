@@ -27,7 +27,8 @@ const AddUser = () => {
 
   }
   const sendrequest = async () => {
-    axios.post("http://localhost:4000/users", {
+    let url = window.REACT_APP_URL
+    axios.post(url, {
       name: String(input.name),
       dob: String(input.dob),
       image: String(input.image),
